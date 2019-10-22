@@ -97,14 +97,27 @@ fun main(args: Array<String>) {
     //for(board in boards) println(board) //to print all boards
     val dict = File("words.txt").useLines { it.toList() }
     val secret = dict.get((0..7699).random())
+    //println(secret)
     val length = secret.length
     println(boards.get(0) + "\n\n")
     for (i: Int in (1..length)) print("_____  ")
-    var guess: String?
-    var incorrect_guesses = 0
-    var correct_guesses = 0
-    while(incorrect_guesses<6 && correct_guesses<length) {
-        print("\nGuess a letter: ")
-        guess = readLine()
+    var current_guess: String?
+    var incorrect_guesses = ArrayList<String>()
+    var correct_guesses = ArrayList<String>()
+    while(incorrect_guesses.size<6 && correct_guesses.size<length) {
+        current_guess = guess()
+        if(secret.contains(current_guess)) {
+            //println("Guess was: " + current_guess + " and it is in the word")
+            correct_guesses.add(current_guess)
+            println(correct_guesses)
+        } else {
+            //println("Guess was: " + current_guess + " and it is not in the word")
+            incorrect_guesses.add(current_guess)
+            println(incorrect_guesses)
+        }
     }
+}
+fun guess(message: String = "\nGuess a letter: "): String {
+    print(message)
+    return readLine()!!
 }
