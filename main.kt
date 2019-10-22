@@ -1,3 +1,5 @@
+import java.time.LocalDateTime
+import java.io.File
 
 val board0 = 
             "        __________ \n" + 
@@ -91,12 +93,19 @@ val board6 =
             "     -------------------------"
 
 val boards = listOf(board0, board1, board2, board3, board4, board5, board6)
-var num_wrong = 0
-val secret_word = "test".toLowerCase()
 fun main(args: Array<String>) {
-    for(board in boards) {
-        println(board)
-        println()
-        println()
+    //for(board in boards) println(board) //to print all boards at the beginning
+    val dict = File("words.txt").useLines { it.toList() }
+    val secret = dict.get((0..7699).random())
+    val length = secret.length
+    println(boards.get(0) + "\n\n")
+    for (i: Int in (1..length)) print("_____  ")
+    var guess: String
+    var incorrect_guesses = 0
+    var correct_guesses = 0
+    while(incorrect_guesses<6 && correct_guesses<length) {
+        print("\nGuess a letter: ")
+        guess = readLine()
     }
+    
 }
