@@ -95,9 +95,10 @@ val board6 =
 val boards = listOf(board0, board1, board2, board3, board4, board5, board6)
 fun main(args: Array<String>) {
     //for(board in boards) println(board) //to print all boards
+    println(boards.get(0))
     val dict = File("words.txt").useLines { it.toList() }
     val secret = dict.get((0..7699).random())
-    println(secret)
+    //println(secret)
     val length = secret.length
     for (i: Int in (1..length)) print("_____  ")
     var current_guess: String?
