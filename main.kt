@@ -108,8 +108,8 @@ fun main(args: Array<String>) {
         current_guess = guess()
         if(secret.contains(current_guess)) {
             //println("Guess was: " + current_guess + " and it is in the word")
-            correct_guesses.add("Correct Guesses: " + current_guess.toString())
-            println(correct_guesses)
+            for(i: Int in (0..secret.count { it == current_guess })) correct_guesses.add(current_guess.toString())
+            println("Correct Guesses: " + correct_guesses)
         } else {
             //println("Guess was: " + current_guess + " and it is not in the word")
             incorrect_guesses.add(current_guess)
