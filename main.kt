@@ -106,17 +106,15 @@ fun main(args: Array<String>) {
     var correct_guesses = ArrayList<String>()
     while(incorrect_guesses.size<6 && correct_guesses.size<length) {
         current_guess = guess()
+        println("\n\n\n\n\n")
         if(secret.contains(current_guess)) {
-            //println("Guess was: " + current_guess + " and it is in the word")
             for(i: Int in (1..secret.count { it.toString() == current_guess })) correct_guesses.add(current_guess.toString())
-            println("Correct Guesses: " + correct_guesses)
         } else {
-            //println("Guess was: " + current_guess + " and it is not in the word")
             incorrect_guesses.add(current_guess)
-            println("Incorrect Gueses: " + incorrect_guesses.toString())
         }
-        //Start reaction to guess here
-        println(boards.get(incorrect_guesses.size))
+        println("Correct Guesses: " + correct_guesses)
+        println("Incorrect Gueses: " + incorrect_guesses.toString())
+        println(boards.get(incorrect_guesses.size)+"\n")
         for(i: Int in (0..length-1)) {
             if(correct_guesses.contains(secret.get(i).toString())) {
                 print("  ${secret.get(i)}   ")
