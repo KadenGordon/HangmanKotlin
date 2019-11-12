@@ -115,6 +115,16 @@ fun main(args: Array<String>) {
             incorrect_guesses.add(current_guess)
             println("Incorrect Gueses: " + incorrect_guesses.toString())
         }
+        //Start reaction to guess here
+        println(boards.get(incorrect_guesses.size))
+        for(i: Int in (0..length)) {
+            if(correct_guesses.contains(secret.get(i))) {
+                print("  ${secret.get(i)}   ")
+            } 
+            else {
+                print("_____  ")
+            }
+        }
     }
 }
 fun guess(message: String = "\nGuess a letter: "): String {
