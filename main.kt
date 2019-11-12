@@ -97,7 +97,7 @@ fun main(args: Array<String>) {
     //for(board in boards) println(board) //to print all boards
     val dict = File("words.txt").useLines { it.toList() }
     val secret = dict.get((0..7699).random())
-    //println(secret)
+    println(secret)
     val length = secret.length
     println(boards.get(0) + "\n\n")
     for (i: Int in (1..length)) print("_____  ")
@@ -118,7 +118,7 @@ fun main(args: Array<String>) {
         //Start reaction to guess here
         println(boards.get(incorrect_guesses.size))
         for(i: Int in (0..length)) {
-            if(correct_guesses.contains(secret.get(i))) {
+            if(correct_guesses.contains(secret.get(i).toString())) {
                 print("  ${secret.get(i)}   ")
             } 
             else {
