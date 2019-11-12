@@ -99,7 +99,6 @@ fun main(args: Array<String>) {
     val secret = dict.get((0..7699).random())
     println(secret)
     val length = secret.length
-    println(boards.get(0) + "\n\n")
     for (i: Int in (1..length)) print("_____  ")
     var current_guess: String?
     var incorrect_guesses = ArrayList<String>()
@@ -125,6 +124,7 @@ fun main(args: Array<String>) {
                 print("_____  ")
             }
         }
+        println("\n\n\n")
     }
 }
 fun guess(message: String = "\nGuess a letter: "): String {
