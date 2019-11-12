@@ -108,7 +108,7 @@ fun main(args: Array<String>) {
         current_guess = guess()
         if(secret.contains(current_guess)) {
             //println("Guess was: " + current_guess + " and it is in the word")
-            correct_guesses.add("Corrent Guesses: " + current_guess.toString())
+            correct_guesses.add("Correct Guesses: " + current_guess.toString())
             println(correct_guesses)
         } else {
             //println("Guess was: " + current_guess + " and it is not in the word")
@@ -117,7 +117,7 @@ fun main(args: Array<String>) {
         }
         //Start reaction to guess here
         println(boards.get(incorrect_guesses.size))
-        for(i: Int in (0..length)) {
+        for(i: Int in (0..length-1)) {
             if(correct_guesses.contains(secret.get(i).toString())) {
                 print("  ${secret.get(i)}   ")
             } 
