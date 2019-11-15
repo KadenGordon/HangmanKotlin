@@ -102,6 +102,9 @@ fun main(args: Array<String>) {
     var correct_guesses = ArrayList<String>()
     while(incorrect_guesses.size<6 && correct_guesses.size<length) {
         println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        println("Correct Guesses: " + correct_guesses)
+        println("Incorrect Guesses: " + incorrect_guesses.toString())
+        println("\n\n")
         println(boards.get(incorrect_guesses.size)+"\n")
         for(i: Int in (0..length-1)) {
             if(correct_guesses.contains(secret.get(i).toString())) {
@@ -118,8 +121,6 @@ fun main(args: Array<String>) {
         } else {
             incorrect_guesses.add(current_guess)
         }
-        println("Correct Guesses: " + correct_guesses)
-        println("Incorrect Guesses: " + incorrect_guesses.toString())
     }
     println("\n\n\n")
     if(incorrect_guesses.size>=6) {
