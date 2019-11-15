@@ -124,7 +124,7 @@ fun main(args: Array<String>) {
         println("\n\n\n")
     }
     if(incorrect_guesses.size>=6) {
-        println("You have lost. The correct word was \"$secret/"")
+        println("You have lost. The correct word was \"$secret\"")
     }
     else {
         println("You won!")
