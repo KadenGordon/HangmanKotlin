@@ -97,11 +97,11 @@ fun main(args: Array<String>) {
     val dict = File("words.txt").useLines { it.toList() }
     val secret = dict.get((0..7699).random())
     val length = secret.length
-    for (i: Int in (1..length)) print("_____  ")
     var current_guess: String?
     var incorrect_guesses = ArrayList<String>()
     var correct_guesses = ArrayList<String>()
     println(boards.get(0))
+    for (i: Int in (1..length)) print("_____  ")
     while(incorrect_guesses.size<6 && correct_guesses.size<length) {
         current_guess = guess()
         println("\n\n\n\n\n")
@@ -121,7 +121,7 @@ fun main(args: Array<String>) {
                 print("_____  ")
             }
         }
-        println("\n\n\n")
+        println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     }
     if(incorrect_guesses.size>=6) {
         println("You have lost. The correct word was \"$secret\"")
