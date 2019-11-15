@@ -94,16 +94,14 @@ val board6 =
 
 val boards = listOf(board0, board1, board2, board3, board4, board5, board6)
 fun main(args: Array<String>) {
-    //for(board in boards) println(board) //to print all boards
-    println(boards.get(0))
     val dict = File("words.txt").useLines { it.toList() }
     val secret = dict.get((0..7699).random())
-    //println(secret)
     val length = secret.length
     for (i: Int in (1..length)) print("_____  ")
     var current_guess: String?
     var incorrect_guesses = ArrayList<String>()
     var correct_guesses = ArrayList<String>()
+    println(boards.get(0))
     while(incorrect_guesses.size<6 && correct_guesses.size<length) {
         current_guess = guess()
         println("\n\n\n\n\n")
@@ -124,6 +122,12 @@ fun main(args: Array<String>) {
             }
         }
         println("\n\n\n")
+    }
+    if(incorrect_guesses.size>=6) {
+        println("You have lost. The correct word was \"$secret/"")
+    }
+    else {
+        println("You won!")
     }
 }
 fun guess(message: String = "\nGuess a letter: "): String {
